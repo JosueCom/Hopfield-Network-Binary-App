@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hopfield Network</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+
+		<u>
+			<h1>Hopfield Network</h1>
+		</u>
+		<center>
+			<h3>Instructions:</h3>
+			<p>1. Draw patterns for the program to learn to recognize in the training sets. <br>2. Click Learn Patterns. <br>3. Draw input pattern in the main section. <br>4. Click Run. <br>5. Watch the magic happen.</p>
+
+	        <h3>Training sets</h3>
+	        <table>
+	        	<tr>
+	        		<td>
+	        			<canvas id="Train1" class="Train" height="80" width="80"></canvas>
+	        		</td>
+	        		<td>
+	        			<canvas id="Train2" class="Train" height="80" width="80"></canvas>
+	        		</td>
+	        		<td>
+	        			<canvas id="Train3" class="Train" height="80" width="80"></canvas>
+	        		</td>
+	        		<!--<td>
+	        			<canvas id="Train4" class="Train" height="80" width="80"></canvas>
+	        		</td>
+	        		<td>
+	        			<canvas id="Train5" class="Train" height="80" width="80"></canvas>
+	        		</td>
+	        		<td>
+	        			<canvas id="Train6" class="Train" height="80" width="80"></canvas>
+	        		</td>-->
+		        </tr>
+		        <tr>
+	        		<td>
+	        			<div>
+	        				<button onclick="sets[1].reset();">Clear</button>
+	        				<button onclick="sets[1].randomSet();">Random</button>
+	        			</div>
+	        		</td>
+	        		<td>
+	        			<div>
+	        				<button onclick="sets[2].reset();">Clear</button>
+	        				<button onclick="sets[2].randomSet();">Random</button>
+	        			</div>
+	        		</td>
+	        		<td>
+	        			<div>
+	        				<button onclick="sets[3].reset();">Clear</button>
+	        				<button onclick="sets[3].randomSet();">Random</button>
+	        			</div>
+	        		</td>
+	        		<!--<td>
+	        			<div>
+	        				<button onclick="sets[4].reset();">Clear</button>
+	        				<button onclick="sets[4].randomSet();">Random</button>
+	        			</div>
+	        		</td>
+	        		<td>
+	        			<div>
+	        				<button onclick="sets[5].reset();">Clear</button>
+	        				<button onclick="sets[5].randomSet();">Random</button>
+	        			</div>
+	        		</td>
+	        		<td>
+	        			<div>
+	        				<button onclick="sets[6].reset();">Clear</button>
+	        				<button onclick="sets[6].randomSet();">Random</button>
+	        			</div>
+	        		</td>-->
+		        </tr>
+	        </table>
+
+	        <h3>Main</h3>
+	        <table style="margin-bottom: 80px;">
+	        	<tr>
+	        		<td>
+	        			<canvas id="main" class="Train" height="80" width="80"></canvas>
+	        			<br>
+	        			<button onclick="sets[0].reset();">Clear</button>	
+	        			<button onclick="sets[0].randomSet();">Random</button>
+	        		</td>
+	        		<td style="padding-right: 50px;"></td>
+	        		<td>
+	        			<center>
+		        			<h3>Tools: </h3>
+		        			<div>
+		        				<button onclick="learnPatterns();">Learn Patterns</button>
+		        			</div>
+		        			<br>
+		        			<div>
+		        				<button onclick="runHopfield();">Run</button>
+		        			</div>
+		        			<br>
+		        			<div>
+		        				<button onclick="resetAll();">Reset Program</button>
+		        			</div>
+	        			</center>
+	        		</td>
+	        		<td>
+	        			<center>
+		        			<br>
+		        			<br>
+		        			<br>
+		        			<div style="margin-top: 3px;">
+		        				<button onclick="learnAndRun();">Learn/Run</button>
+		        			</div>
+		        			<br>
+		        			<div>
+		        				<button onclick="clearAll();">Clear All</button>
+		        			</div>
+		        			<br>
+		        			<div>
+		        				<button onclick="randomAll();">Random All</button>
+		        			</div>
+	        			</center>
+	        		</td>
+	        	</tr>
+	        </table>
+	        <div>
+	        </div>
+
+	    </center>
+
+	    <!-- App is in binaryApp.js -->
+	    <!-- Hopfield is in hopfield.js -->
+	    <script type="text/javascript" rel="javascript" src="neuron.js"></script>
+	    <script type="text/javascript" rel="javascript" src="layer.js"></script>
+	    <script type="text/javascript" rel="javascript" src="hopfield.js"></script>
+		<script type="text/javascript" rel="javascript" src="binaryApp.js"></script>
+		<!--<script type="text/javascript" rel="javascript" src="hopfield.js"></script>-->
+
+	</body>
+</html>
