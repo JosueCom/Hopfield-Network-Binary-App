@@ -97,15 +97,9 @@ function Network(){
             	sets[0].binarySequence[i] = this.hopLayer.neurons[i].value;
             }
 
-            if (this.numCycles % this.cycles_rate == 0){
-            	console.log("Cycle " + this.numCycles);
-            	sets[0].updateDrawing();
-            	sleep(1000);
-            }
-
             i = getRandomInt(0, this.numNeu);
-            // i = (i + (2*(random.randint(0, 2)) - 1)) % this.numNeu
-            // i = (i + 2) % this.numNeu
+            //i = (i + (2*(random.randint(0, 2)) - 1)) % this.numNeu
+            //i = (i + 2) % this.numNeu
             // Sum of weights of this neuron
             this.hopLayer.neurons[i].sum = 0;
             for (var x = 0; x < this.numNeu; x++){
@@ -119,6 +113,12 @@ function Network(){
 
             if (this.hopLayer.hasANeuChanged()){
                 this.hopLayer.resetRunAndChange();
+            }
+
+            if (this.numCycles % this.cycles_rate == 0){
+            	console.log("Cycle " + this.numCycles);
+                sets[0].updateDrawing();
+                //sleep(500);
             }
         }
         sets[0].updateDrawing();

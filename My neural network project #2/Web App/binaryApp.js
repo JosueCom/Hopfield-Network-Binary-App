@@ -1,6 +1,6 @@
 // Zero is main canvas, rest are 1-6, respectively
-var canvas = [document.getElementById("main"), document.getElementById("Train1"), document.getElementById("Train2"), document.getElementById("Train3")];//, document.getElementById("Train4"), document.getElementById("Train5"), document.getElementById("Train6")];
-ctx = [canvas[0].getContext("2d"), canvas[1].getContext("2d"), canvas[2].getContext("2d"), canvas[3].getContext("2d")];//, canvas[4].getContext("2d"), canvas[5].getContext("2d"), canvas[6].getContext("2d")];
+var canvas = [document.getElementById("main"), document.getElementById("Train1"), document.getElementById("Train2"), document.getElementById("Train3")];//, document.getElementById("Train4")];//, document.getElementById("Train5"), document.getElementById("Train6")];
+ctx = [canvas[0].getContext("2d"), canvas[1].getContext("2d"), canvas[2].getContext("2d"), canvas[3].getContext("2d")];// canvas[4].getContext("2d")];//, canvas[5].getContext("2d"), canvas[6].getContext("2d")];
 var sets = [];
 var ranPatterns = false;
 
@@ -8,13 +8,13 @@ var ranPatterns = false;
 /*******************Info Session******************/
 /*************************************************/
 /*********/var canvasSize = [100, 100];/**********/
-/************/var numberOfPixels = 5/*************/
+/***********/var numberOfPixels = 5;/*************/
 /*************/var strokeSize = 1;/***************/
 /*************************************************/
 /*************************************************/
 /*************************************************/
 
-var pixelSize = 100/numberOfPixels;
+var pixelSize = canvasSize[0]/numberOfPixels;
 for (var i = 0; i < canvas.length; i++) {
 	canvas[i].width = canvasSize[0];
 	canvas[i].height = canvasSize[1];
@@ -157,9 +157,6 @@ for (var i = 0; i < canvas.length; i++) {
 		ctx[i].stroke();
 		ctx[i].closePath();
 	}
-	///*canvas[i].addEventListener("mousedown", */sets[i].update()/*)*/;
-
-
 
 	ctx[i].strokeStyle = "black";
 }
@@ -203,15 +200,13 @@ function clearSet(index){
 }
 
 function resetAll(){
-	animation = setInterval(animate, 100);
 	clearSet(0);
+	animation = setInterval(animate, 100);
 	Hopfield = new Network();
 }
 
-function printBinarySequence(){
-	for (var i = 0; i < sets.length; i++) {
-		console.log(sets[i].binarySequence);
-	}
+function printBinarySequence(index){
+	console.log(sets[index].binarySequence);
 }
 
 /*ctx[1].beginPath();
