@@ -15,8 +15,10 @@ class Neuron(object):
             self.ran = True
             previousValue = self.value
 
-            if self.sum >= 0:
+            if self.sum > 0:
                 self.value = 1
+            elif self.sum == 0:
+                self.value = self.value
             else:
                 self.value = 0
 
