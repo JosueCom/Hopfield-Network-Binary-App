@@ -13,8 +13,11 @@ function Neuron() {
         this.ran = true;
         var previousValue = this.value;
 
-        if (this.sum >= 0){
+        if (this.sum > 0){
             this.value = 1;
+        }
+        else if(this.sum == 0){
+            this.value = this.value;
         }
         else{
             this.value = 0;
